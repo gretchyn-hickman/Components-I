@@ -152,7 +152,6 @@ function makeArtical({ title, date, firstParagraph, secondParagraph, thirdParagr
   expandButton.addEventListener("click", () => {
     articalDiv.classList.toggle("article-open");
   });
-
   return articalDiv;
 }
 const placeArticals = document.querySelector(".articles");
