@@ -2,9 +2,17 @@ import "./index.less";
 import "./components/article/article.js";
 import "./components/menu/menu.js";
 
+const testData = {
+  title: "test",
+  date: "test",
+  firstParagraph: `test`,
+  secondParagraph: `test`,
+  thirdParagraph: `test`,
+};
+
 function makeArtical( {title, date, firstParagraph, secondParagraph, thirdParagraph,} ) {
   const articalDiv = document.createElement("div");
-  articalDiv.classList.add("artical");
+  articalDiv.classList.add("article");
   const articalTitle = document.createElement("h2");
   const articalDate = document.createElement("p");
   const articalOne = document.createElement("p");
@@ -18,6 +26,7 @@ function makeArtical( {title, date, firstParagraph, secondParagraph, thirdParagr
   articalOne.textContent = firstParagraph;
   articalTwo.textContent = secondParagraph;
   articalThree.textContent = thirdParagraph;
+  expandButton.textContent = 'expand'
 
 
   articalDiv.appendChild(articalTitle);
@@ -28,16 +37,16 @@ function makeArtical( {title, date, firstParagraph, secondParagraph, thirdParagr
   articalDiv.appendChild(expandButton);
   return articalDiv;
 }
+const articalOne = makeArtical(testData);
 
-const testData = {
-  title: "test",
-  date: "test",
-  firstParagraph: `test`,
-  secondParagraph: `test`,
-  thirdParagraph: `test`,
-};
+
+const placeArticals = document.querySelector('.articles');
+placeArticals.appendChild(articalOne);
+
+
+
 console.log(testData);
-console.log(makeArtical(testData));
+console.log(articalOne);
 
 /* <div class="article">
     <h2>{title of the article}</h2>
